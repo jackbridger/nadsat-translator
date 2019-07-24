@@ -2,7 +2,7 @@
 
 // https://github.com/sofer/sssk/blob/master/router.js
 
-var handlers = require("./handlers");
+var handlers = require("./handler");
 
 var routes = {
   "/": handlers.home,
