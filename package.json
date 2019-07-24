@@ -1,0 +1,28 @@
+{
+  "name": "you-speak-newspeak",
+  "version": "1.0.0",
+  "description": "BFNJ",
+  "main": "server.js",
+  "scripts": {
+    "test": "tape ./test/*.test.js | tap-spec",
+    "test:watch": "nodemon -q -x 'npm test'"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/emaggy/you-speak-newspeak.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/emaggy/you-speak-newspeak/issues"
+  },
+  "homepage": "https://github.com/emaggy/you-speak-newspeak#readme",
+  "devDependencies": {
+    "nodemon": "^1.19.1",
+    "tap-spec": "^5.0.0",
+    "tape": "^4.11.0"
+  },
+  "dependencies": {
+    "normalize.css": "^8.0.1"
+  }
+}
