@@ -34,7 +34,9 @@ handlers.notFound = function(req, res) {
 // user types into text box; on each key press, search dictionary object and return possible words
 // (add event listener etc.)
 var inputString = "test";
-var testObject = { tested: "1", testing: "2", no: "3" };
+// var testObject = { tested: "1", testing: "2", no: "3" };
+var testObject = data.nadsat;
+
 var returnedWords = [];
 
 function pushKeys(key) {
