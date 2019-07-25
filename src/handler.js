@@ -6,6 +6,7 @@ const handlers = (module.exports = {});
 const data = require("./model");
 const fs = require("fs");
 const path = require("path");
+const url = require('url');
 
 let headers = {
   "content-type": "text/html"
@@ -29,6 +30,20 @@ handlers.notFound = function(req, res) {
   res.writeHead(404, headers);
   res.end("Resource not found");
 };
+
+handlers.translate = (req, res) => {
+  const filePath = path.join(__dirname + "/.." + "/public" + "/index.html");
+  fs.readFile(filePath, (error, file) => {
+    if (error) {
+      res.write("Sorry! Problem at our end.");
+      return;
+    }
+    res.writeHead(200, {
+      "Content-Type": "text/html"
+    });
+    res.end(req.url.split('?')[1]);
+  });
+}
 
 // autocomplete section
 // user types into text box; on each key press, search dictionary object and return possible words
