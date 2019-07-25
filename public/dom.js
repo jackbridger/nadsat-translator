@@ -59,6 +59,9 @@ function getInput() {
   // pushKeys();
   Object.keys(testObject).forEach(pushKeys);
   console.log(returnedWords);
+  // document.getElementByID("dropdown").value =
+  var dropdown = document.getElementById("dropdown");
+  dropdown.innerHTML = returnedWords.join(" ");
 }
 
 document.getElementById("inputField").addEventListener("keyup", getInput);
