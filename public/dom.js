@@ -71,7 +71,8 @@ function getInput() {
 
     // other part of the code that just shows the autocomplete suggestions in a non-functional way
     var currentDiv = document.getElementById("dropdown");
-    document.body.insertBefore(newButton, currentDiv);
+
+    // document.body.insertBefore(newButton, currentDiv);
 
     // creates autocomplete suggestions as buttons, but adds new ones every time the array is refreshed
     // this version is technically closer to what we need than the above option
@@ -83,6 +84,14 @@ function getInput() {
 }
 
 document.getElementById("inputField").addEventListener("keyup", getInput);
+
+function enterButton(e) {
+  // checks if button is enter button
+  if (e.keyCode == 13) {
+    searchForTranslation(inputString);
+  }
+}
+document.getElementById("inputField").addEventListener("keydown", enterButton);
 
 // document.onload = alert("test");
 
