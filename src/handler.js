@@ -48,7 +48,12 @@ handlers.translate = (req, res) => {
 // autocomplete section
 // user types into text box; on each key press, search dictionary object and return possible words
 // (add event listener etc.)
-var inputString = "test";
+function getInput() {
+  document.getElementById("inputField").value = inputString;
+}
+console.log(inputString);
+
+document.getElementById("inputField").addEventListener("onkeydown", getInput);
 // var testObject = { tested: "1", testing: "2", no: "3" };
 var testObject = data.nadsat;
 
