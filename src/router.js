@@ -6,13 +6,20 @@ var handlers = require("./handler");
 
 var routes = {
   "/": handlers.home,
-  "404": handlers.notFound
+  "404": handlers.notFound,
+  "translate": handlers.translate
 };
+
+// /translate#q=good
 
 module.exports = function(req, res) {
   if (routes[req.url]) {
     routes[req.url](req, res);
-  } else {
+  } 
+  else if (req.url.includes('translate')) {
+    routes["translate"](req, res);
+  }
+  else {
     routes[404](req, res);
   }
 };
