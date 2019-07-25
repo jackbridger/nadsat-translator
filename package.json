@@ -24,6 +24,7 @@
     "tape": "^4.11.0"
   },
   "dependencies": {
+    "env": "0.0.2",
     "normalize.css": "^8.0.1"
   }
 }
