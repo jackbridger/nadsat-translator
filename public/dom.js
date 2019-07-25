@@ -61,7 +61,7 @@ function getInput() {
   console.log(returnedWords);
 }
 
-document.getElementById("inputField").addEventListener("keydown", getInput);
+document.getElementById("inputField").addEventListener("keyup", getInput);
 
 // document.onload = alert("test");
 
