@@ -12,14 +12,14 @@ let headers = {
 };
 
 handlers.home = function(req, res) {
-  const filePath = path.join(__dirname + "/.." + "/public" + "/index.html")
+  const filePath = path.join(__dirname + "/.." + "/public" + "/index.html");
   fs.readFile(filePath, (error, file) => {
     if (error) {
       res.write("Sorry! Problem at our end.");
       return;
     }
     res.writeHead(200, {
-      "Content-Type":"text/html"
+      "Content-Type": "text/html"
     });
     res.end(file);
   });
@@ -29,3 +29,22 @@ handlers.notFound = function(req, res) {
   res.writeHead(404, headers);
   res.end("Resource not found");
 };
+
+// autocomplete section
+// user types into text box; on each key press, search dictionary object and return possible words
+// (add event listener etc.)
+var inputString = "test";
+var testObject = { tested: "1", testing: "2", no: "3" };
+var returnedWords = [];
+
+function pushKeys(key) {
+  var keyString = key.toString();
+  if (keyString.includes(inputString)) {
+    returnedWords.push(key);
+  }
+}
+
+Object.keys(testObject).forEach(pushKeys);
+
+console.log(returnedWords);
+// display possible words
