@@ -32,6 +32,8 @@ handlers.notFound = function(req, res) {
 };
 
 handlers.translate = (req, res) => {
+  let searchWord = req.url.split('?')[1];
+  let wordTranslation = data.nadsat[searchWord];
   const filePath = path.join(__dirname + "/.." + "/public" + "/index.html");
   fs.readFile(filePath, (error, file) => {
     if (error) {
@@ -41,7 +43,7 @@ handlers.translate = (req, res) => {
     res.writeHead(200, {
       "Content-Type": "text/html"
     });
-    res.end(req.url.split('?')[1]);
+    res.end(wordTranslation);
   });
 }
 
