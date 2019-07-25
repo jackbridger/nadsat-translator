@@ -51,7 +51,6 @@ function pushKeys(key) {
   }
 }
 
-// note: inputString does not include the last letter
 function getInput() {
   returnedWords = [];
   inputString = document.getElementById("inputField").value;
@@ -59,9 +58,28 @@ function getInput() {
   // pushKeys();
   Object.keys(testObject).forEach(pushKeys);
   console.log(returnedWords);
-  // document.getElementByID("dropdown").value =
+
+  // part of the code that just shows the autocomplete suggestions in a non-functional way
   var dropdown = document.getElementById("dropdown");
   dropdown.innerHTML = returnedWords.join(" ");
+
+  function createItem(word) {
+    // first attempt I think - can delete
+    // var newButton = document.createElement("div");
+    // var newWord = document.createTextNode(word);
+    // newButton.appendChild(newWord);
+
+    // other part of the code that just shows the autocomplete suggestions in a non-functional way
+    var currentDiv = document.getElementById("dropdown");
+    document.body.insertBefore(newButton, currentDiv);
+
+    // creates autocomplete suggestions as buttons, but adds new ones every time the array is refreshed
+    // this version is technically closer to what we need than the above option
+    // var btn = document.createElement("button");
+    // btn.innerHTML = word;
+    // document.body.appendChild(btn);
+  }
+  returnedWords.forEach(createItem);
 }
 
 document.getElementById("inputField").addEventListener("keyup", getInput);
