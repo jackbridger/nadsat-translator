@@ -1,37 +1,18 @@
-// Interact with our HTML. Create our event listeners
-
+// Interact with our HTML. Create our event listeners.
 
 document.onload = function() {
   searchForTranslation();
-}
-
-let searchForTranslation = wordToTranslate => {
-  let xhr = new XMLHttpRequest();
-  let url = "/translate" + "?" + wordToTranslate;
+};
 
 let searchForTranslation = () => {
-  let wordToTranslate = 'men';
-  console.log(wordToTranslate)
+  let wordToTranslate = "men";
+  console.log(wordToTranslate);
   let xhr = new XMLHttpRequest();
-  let url = "/translate" + "?" + 'men';
-  console.log(url);
+  let url = "/translate" + "?" + "men";
+
   xhr.onreadystatechange = () => {
     if (xhr.readyState === 4 && xhr.status === 200) {
       var nadsatData = xhr.responseText;
-
-      // something .innertext = nadsatData
-      console.log(nadsatData)
-    }console.log(nadsatData)
-
-  }
-
-  xhr.open("GET", url, true);
-  xhr.send();
-}
-
-let searchBox = document.getElementById('inputField');
-let submitbutton = document.getElementById("clicky");
-
       console.log(nadsatData);
     }
   };
@@ -39,12 +20,10 @@ let submitbutton = document.getElementById("clicky");
   xhr.send();
 };
 
+let searchBox = document.getElementById("inputField");
+let submitbutton = document.getElementById("clicky");
 
-// submitbutton.addEventListener("click", searchForTranslation('men'));
-
-
-// ______
-
+// -------------------
 
 // autocomplete section
 // user types into text box; on each key press, search dictionary object and return possible words
@@ -63,7 +42,6 @@ var testObject = {
   angry: "razdraz",
   test1: "dhdj"
 };
-
 
 var returnedWords = [];
 
