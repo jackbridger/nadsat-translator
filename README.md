@@ -39,6 +39,9 @@ Build a site which will update as you type (an autocompleter).
 * We've managed to set up our handlers and get our pages AND our CSS and JS files working. Woohoo!!
 * Our JS is a bit messy and still needs work but it's doing stuff... if only we could have another day...
 
+## What is our site supposed to do?
+So it's supposed to translate English words into their [Nadsat](https://en.wikipedia.org/wiki/Nadsat) equivalent. The user types in an English word, which autocompletes if it has an equivalent in the file, and then the html page will load the translation for you.
+
 ## What can our website actually do so far?
 * Enter a word to translate (but it won't translate yet)
 * Autocomplete results from a test object appear (the object's keys are the English words, while the values are the Nadsat words)
