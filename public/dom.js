@@ -1,8 +1,14 @@
-// Interact with our HTML. Create our event listeners
+// Interact with our HTML. Create our event
 
-let searchForTranslation = wordToTranslate => {
+document.onload = function() {
+  searchForTranslation();
+};
+
+let searchForTranslation = () => {
+  let wordToTranslate = "men";
+  console.log(wordToTranslate);
   let xhr = new XMLHttpRequest();
-  let url = "/translate" + "?" + wordToTranslate;
+  let url = "/translate" + "?" + "men";
 
   xhr.onreadystatechange = () => {
     if (xhr.readyState === 4 && xhr.status === 200) {
@@ -13,6 +19,9 @@ let searchForTranslation = wordToTranslate => {
   xhr.open("GET", url, true);
   xhr.send();
 };
+
+let searchBox = document.getElementById("inputField");
+let submitbutton = document.getElementById("clicky");
 
 // -------------------
 
