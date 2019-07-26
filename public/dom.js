@@ -1,4 +1,4 @@
-// Interact with our HTML. Create our event
+// Interact with our HTML. Create our event listeners.
 
 document.onload = function() {
   searchForTranslation();
