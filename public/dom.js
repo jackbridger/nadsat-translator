@@ -5,14 +5,17 @@ document.onload = function() {
 };
 
 let searchForTranslation = () => {
-  let wordToTranslate = "men";
+  let wordToTranslate = document.getElementById("inputField").value;
   console.log(wordToTranslate);
   let xhr = new XMLHttpRequest();
-  let url = "/translate" + "?" + "men";
+  let url = "/translate?" + wordToTranslate;
 
   xhr.onreadystatechange = () => {
     if (xhr.readyState === 4 && xhr.status === 200) {
       var nadsatData = xhr.responseText;
+      let resultsBullets = document.getElementById("resultssearch");
+      resultsBullets.innerText = nadsatData;
+
       console.log(nadsatData);
     }
   };
@@ -20,8 +23,8 @@ let searchForTranslation = () => {
   xhr.send();
 };
 
-let searchBox = document.getElementById("inputField");
-let submitbutton = document.getElementById("clicky");
+let submitbutton = document.getElementById("submitbutton");
+submitbutton.addEventListener("click", searchForTranslation);
 
 // -------------------
 

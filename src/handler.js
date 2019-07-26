@@ -41,7 +41,7 @@ handlers.translate = (req, res) => {
       return;
     }
     res.writeHead(200, {
-      "Content-Type": "text/html"
+      "Content-Type": "text/plain"
     });
     res.end(wordTranslation);
   });

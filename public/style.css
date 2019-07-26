@@ -6,21 +6,25 @@ body {
 .page-content-container {
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 h1 {
   margin: 2rem;
 }
 
-.dropdown {
-  border: 2px solid black;
-  z-index: 10;
-  width: 200px;
-  height: 50px;
-  background-color: green;
-  font-size: 20px;
+#dropdown,
+#resultssearch {
+  font-size: 3rem;
+}
+
+#dropdown {
   color: green;
-  display: visible;
+}
+
+#resultssearch {
+  color: red;
 }
 
 form {
@@ -41,7 +45,7 @@ form {
   box-shadow: 5px 5px grey;
 }
 
-.submitButton {
+#submitbutton {
   background-color: blue; /* Green */
   border: none;
   color: white;
@@ -53,7 +57,7 @@ form {
   cursor: pointer;
   margin: 2rem;
   width: 12rem;
-  height: 4rem;
+  height: 2rem;
   font-size: 1.5rem;
   border-radius: 25px;
 }
