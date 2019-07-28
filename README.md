@@ -1,8 +1,7 @@
 # Week 4 - Autocomplete website/widget: you-speak-newspeak
-## (the repo name references Newspeak from 1984, but we changed the project to use Nadsat from A Clockwork Orange)
-## BFNJ - Emmanuel, Jack, Georgia and Colette
+## Translate English to Nadsat (from the book/movie 'A Clockwork Orange')
 
-<img src="https://sourcemaking.com/files/sm/images/spagett.jpg"></img>
+<img src="https://is4-ssl.mzstatic.com/image/thumb/Video22/v4/ef/49/de/ef49de27-5a84-9dc2-80be-d51560ae8d68/mzm.tcjamxoj.lsr/268x0w.png"></img>
 
 ## Task
 Build a site which will update as you type (an autocompleter).
