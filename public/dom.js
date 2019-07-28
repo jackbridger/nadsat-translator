@@ -1,15 +1,13 @@
 // Interact with our HTML. Create our event listeners.
 
-document.onload = function() {
-  searchForTranslation();
-};
-
 let clearDropdown = () => {
   autocompleteList.innerHTML = "";
 }
 
 
-let searchForTranslation = () => {
+let searchForTranslation = (event) => {
+  event.preventDefault();
+
   if (inputField.value.length < 1) {
     return;
   }
@@ -51,10 +49,16 @@ let searchForAutoComplete = () => {
 }
 
 let submitbutton = document.getElementById("submitbutton");
-submitbutton.addEventListener("click", searchForTranslation);
+submitbutton.addEventListener("click", (event) => {searchForTranslation(event)});
 
 let inputField = document.getElementById("inputField");
+
+inputField.addEventListener("keyup", (e) => {
+    e.preventDefault();
+    if (e.keyCode === 13 ) {
+      submitbutton.click();
+    }
+})
 inputField.oninput = searchForAutoComplete;
+
 let autocompleteList = document.getElementById("autocomplete-list")
-
-

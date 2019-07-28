@@ -33,6 +33,9 @@ form {
   align-content: center;
   cursor: pointer;
 }
+#autocomplete-list {
+  width: 100%;
+}
 
 #inputField {
   border-radius: 25px;
@@ -57,7 +60,7 @@ form {
   cursor: pointer;
   margin: 2rem;
   width: 12rem;
-  height: 2rem;
+  height: 3.5rem;
   font-size: 1.5rem;
   border-radius: 25px;
 }

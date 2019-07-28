@@ -35,17 +35,10 @@ handlers.notFound = function(req, res) {
 handlers.translate = (req, res) => {
   let searchWord = req.url.split('?')[1];
   let wordTranslation = data.nadsat[searchWord];
-  const filePath = path.join(__dirname + "/.." + "/public" + "/index.html");
-  fs.readFile(filePath, (error, file) => {
-    if (error) {
-      res.write("Sorry! Problem at our end.");
-      return;
-    }
-    res.writeHead(200, {
-      "Content-Type": "text/plain"
-    });
-    res.end(wordTranslation);
+  res.writeHead(200, {
+    "Content-Type": "text/plain"
   });
+  res.end(wordTranslation);
 }
 
 
