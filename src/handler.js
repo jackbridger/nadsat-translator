@@ -7,6 +7,7 @@ const data = require("./model");
 const fs = require("fs");
 const path = require("path");
 const url = require('url');
+const autocomplete = require('./autocomplete')
 
 let headers = {
   "content-type": "text/html"
@@ -49,8 +50,12 @@ handlers.translate = (req, res) => {
 
 
 handlers.autocomplete = (req, res) => {
-  let searchWord = req.url.split('?')[1];
-
+  let partialWord = req.url.split('?')[1];
+  let autcompleteResults = autocomplete(partialWord);
+    res.writeHead(200, {
+      "Content-Type": "text/plain"
+    });
+    res.end(autcompleteResults);
 }
 
 handlers.public = (req, res) => {

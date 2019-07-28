@@ -8,6 +8,7 @@ var routes = {
   "/": handlers.home,
   "404": handlers.notFound,
   "translate": handlers.translate,
+  "autocomplete":handlers.autocomplete,
   "public":handlers.public
 };
 
@@ -20,10 +21,13 @@ module.exports = function(req, res) {
   else if (req.url.includes('translate')) {
     routes["translate"](req, res);
   }
+  else if (req.url.includes("autocomplete")) {
+    routes["autocomplete"](req,res);
+  }
   else if (req.url.includes('public')) {
     console.log("i am in public!")
       routes["public"](req, res);
-    }
+  }
   else {
     routes[404](req, res);
   }
