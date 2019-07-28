@@ -9,9 +9,23 @@ test('test if autcomplete returns an array', (t) => {
     t.end();
 })
 
-test('test if autcomplete returns correct array', (t) => {
+test('test if autcomplete returns correct array for single match', (t) => {
     let actual = autocomplete('me');
     let expected = ["men"];
+    t.deepEqual(actual, expected);
+    t.end();
+})
+
+test('test if autcomplete returns correct array for multiple matches', (t) => {
+    let actual = autocomplete("ba");
+    let expected = ["bad","band", "battle", "bastard"];
+    t.deepEqual(actual, expected);
+    t.end();
+})
+
+test('test if autcomplete returns max of 5 results', (t) => {
+    let actual = autocomplete("b");
+    let expected = [ 'bad', 'band', 'bed', 'battle', 'big'];
     t.deepEqual(actual, expected);
     t.end();
 })
