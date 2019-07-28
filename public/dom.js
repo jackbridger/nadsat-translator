@@ -23,5 +23,25 @@ let searchForTranslation = () => {
   xhr.send();
 };
 
+let searchForAutoComplete = () => {
+  let wordToTranslate = document.getElementById("inputField").value;
+  console.log(wordToTranslate);
+  let xhr = new XMLHttpRequest();
+  let url = "/autocomplete?" + wordToTranslate;
+
+  xhr.onreadystatechange = () => {
+    if (xhr.readyState === 4 && xhr.status === 200) {
+      var autoNadsat = JSON.parse(xhr.responseText).autocompleteResults;
+
+      console.log(autoNadsat);
+    }
+  };
+  xhr.open("GET", url, true);
+  xhr.send();
+}
+
 let submitbutton = document.getElementById("submitbutton");
 submitbutton.addEventListener("click", searchForTranslation);
+
+let inputField = document.getElementById("inputField");
+inputField.oninput = searchForAutoComplete;

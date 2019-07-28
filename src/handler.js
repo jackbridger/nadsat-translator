@@ -51,11 +51,13 @@ handlers.translate = (req, res) => {
 
 handlers.autocomplete = (req, res) => {
   let partialWord = req.url.split('?')[1];
-  let autcompleteResults = autocomplete(partialWord);
+  let autocompleteResults = autocomplete(partialWord);
+  let obj = {};
+  obj.autocompleteResults = autocompleteResults;
     res.writeHead(200, {
-      "Content-Type": "text/plain"
+      "Content-Type": "application/json"
     });
-    res.end(autcompleteResults);
+    res.end(JSON.stringify(obj));
 }
 
 handlers.public = (req, res) => {
