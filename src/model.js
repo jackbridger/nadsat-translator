@@ -1,7 +1,5 @@
 let db = {};
 
-db.greeting = "Hello world";
-
 db.nadsat = {
   men: "chellovecks",
   money: "cutter",

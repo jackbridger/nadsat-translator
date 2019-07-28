@@ -47,6 +47,12 @@ handlers.translate = (req, res) => {
   });
 }
 
+
+handlers.autocomplete = (req, res) => {
+  let searchWord = req.url.split('?')[1];
+
+}
+
 handlers.public = (req, res) => {
   const extension = req.url.split(".")[1];
 
