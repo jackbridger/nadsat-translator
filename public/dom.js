@@ -4,8 +4,16 @@ document.onload = function() {
   searchForTranslation();
 };
 
+let clearDropdown = () => {
+  autocompleteList.innerHTML = "";
+}
+
+
 let searchForTranslation = () => {
-  let wordToTranslate = document.getElementById("inputField").value;
+  if (inputField.value.length < 1) {
+    return;
+  }
+  let wordToTranslate = inputField.value;
   console.log(wordToTranslate);
   let xhr = new XMLHttpRequest();
   let url = "/translate?" + wordToTranslate;
@@ -15,8 +23,6 @@ let searchForTranslation = () => {
       var nadsatData = xhr.responseText;
       let resultsBullets = document.getElementById("resultssearch");
       resultsBullets.innerText = nadsatData;
-
-      console.log(nadsatData);
     }
   };
   xhr.open("GET", url, true);
@@ -24,16 +30,20 @@ let searchForTranslation = () => {
 };
 
 let searchForAutoComplete = () => {
-  let wordToTranslate = document.getElementById("inputField").value;
+  let wordToTranslate = inputField.value;
   console.log(wordToTranslate);
   let xhr = new XMLHttpRequest();
   let url = "/autocomplete?" + wordToTranslate;
 
   xhr.onreadystatechange = () => {
     if (xhr.readyState === 4 && xhr.status === 200) {
+      clearDropdown();
       var autoNadsat = JSON.parse(xhr.responseText).autocompleteResults;
-
-      console.log(autoNadsat);
+      autoNadsat.forEach((item) => {
+        let newSuggestion = document.createElement('option');
+        newSuggestion.value = item;
+        autocompleteList.appendChild(newSuggestion);
+      })
     }
   };
   xhr.open("GET", url, true);
@@ -45,3 +55,6 @@ submitbutton.addEventListener("click", searchForTranslation);
 
 let inputField = document.getElementById("inputField");
 inputField.oninput = searchForAutoComplete;
+let autocompleteList = document.getElementById("autocomplete-list")
+
+
