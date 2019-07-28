@@ -16,10 +16,10 @@ Build a site which will update as you type (an autocompleter).
 * Consider how implementation affects user experience and web performance (e.g. time to load and search through the data file).
 
 ## Goals: 
-- [ ] We expect back-end testing using tape (test as many components as you can).
+- [X] We expect back-end testing using tape (test as many components as you can).
 - [ ] Basic front-end testing. Please note that we expect tests on pure functions and not on the router or the DOM.
 - [x] Host your project on heroku, see resource.
-- [ ] Use module.exports and require to break a single large server file into smaller modules.
+- [X] Use module.exports and require to break a single large server file into smaller modules.
 - [x] Consider what would be a good server file structure based on what we have discussed over the week.
 
 ## What's gone well (or perhaps better phrased as what's not gone too badly)
@@ -34,19 +34,12 @@ Build a site which will update as you type (an autocompleter).
 * Getting our handlers to work and understanding why js and css files need paths even though they're not files the user would ever navigate to. 
 
 ## What have we learnt?
-* That Node.js is not our friend... yet. And it's &^%$%£@ difficult to get your head around!
-* But hopefully we all feel a tiny bit more confident with Node.
+* How to make API requests on the front end and respond via Nodejs
 * We've managed to set up our handlers and get our pages AND our CSS and JS files working. Woohoo!!
-* Our JS is a bit messy and still needs work but it's doing stuff... if only we could have another day...
 
 ## What is our site supposed to do?
-So it's supposed to translate English words into their [Nadsat](https://en.wikipedia.org/wiki/Nadsat) equivalent. The user types in an English word, which autocompletes if it has an equivalent in the file, and then the html page will load the translation for you.
+It's supposed to translate English words into their [Nadsat](https://en.wikipedia.org/wiki/Nadsat) equivalent. The user types in an English word, which autocompletes if it has an equivalent in the file, and then the html page will load the translation for you.
 
-## What can our website actually do so far?
-* Enter a word to translate (but it won't translate yet)
-* Autocomplete results from a test object appear (the object's keys are the English words, while the values are the Nadsat words)
-* Currently they appear as text, but there is a commented out version that makes them appear as separate buttons - that version is likely closer to the final, functioning version, but it is unfinished and has an issue that needs ironing out
-* There is an event listener checking for if the enter button is pressed - this links up to the function that takes the input as an argument and returns the translation - however, the translation is not shown yet
-* The submit button does not have the same event listener yet
-* Clicking the autocomplete suggestions does not do anything yet (in either version of the code that shows the suggestions on the screen)
-
+## What can our website actually do?
+* Enter a word to translate
+* Autocomplete suggested words from the backend
